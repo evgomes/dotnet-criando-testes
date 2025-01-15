@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gerenciamento de Usuários", "Gerenciamento de Usuários", "{04015C55-319B-4DB6-A011-54772874A738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriandoTestes.GestaoUsuarios.Dominio", "CriandoTestes.GestaoUsuarios.Dominio\CriandoTestes.GestaoUsuarios.Dominio.csproj", "{CA74E9CC-7371-4B39-85B9-824E440E8A3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{43380908-5933-4AD5-9F9D-45167978E5C6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriandoTestes.GestaoUsuarios.Testes", "CriandoTestes.GestaoUsuarios.Testes\CriandoTestes.GestaoUsuarios.Testes.csproj", "{E65B6B6D-EA0C-49A5-A930-5C1E9A2A8E21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriandoTestes.GestaoUsuarios.Dados.EFCore", "CriandoTestes.GestaoUsuarios.Dados.EFCore\CriandoTestes.GestaoUsuarios.Dados.EFCore.csproj", "{56499445-B194-4E9B-A385-11289C0BAA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriandoTestes.GestaoUsuarios.Servicos", "CriandoTestes.GestaoUsuarios.Servicos\CriandoTestes.GestaoUsuarios.Servicos.csproj", "{3A581FE9-858C-4C75-9C86-590ACE466C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriandoTestes.GestaoUsuarios.Configuracoes", "CriandoTestes.GestaoUsuarios.Configuracoes\CriandoTestes.GestaoUsuarios.Configuracoes.csproj", "{7399F270-A4D6-4AE6-8B8F-8172D929C95E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA74E9CC-7371-4B39-85B9-824E440E8A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA74E9CC-7371-4B39-85B9-824E440E8A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA74E9CC-7371-4B39-85B9-824E440E8A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA74E9CC-7371-4B39-85B9-824E440E8A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E65B6B6D-EA0C-49A5-A930-5C1E9A2A8E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65B6B6D-EA0C-49A5-A930-5C1E9A2A8E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65B6B6D-EA0C-49A5-A930-5C1E9A2A8E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65B6B6D-EA0C-49A5-A930-5C1E9A2A8E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56499445-B194-4E9B-A385-11289C0BAA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56499445-B194-4E9B-A385-11289C0BAA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56499445-B194-4E9B-A385-11289C0BAA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56499445-B194-4E9B-A385-11289C0BAA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A581FE9-858C-4C75-9C86-590ACE466C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A581FE9-858C-4C75-9C86-590ACE466C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A581FE9-858C-4C75-9C86-590ACE466C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A581FE9-858C-4C75-9C86-590ACE466C86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7399F270-A4D6-4AE6-8B8F-8172D929C95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7399F270-A4D6-4AE6-8B8F-8172D929C95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7399F270-A4D6-4AE6-8B8F-8172D929C95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7399F270-A4D6-4AE6-8B8F-8172D929C95E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA74E9CC-7371-4B39-85B9-824E440E8A3F} = {04015C55-319B-4DB6-A011-54772874A738}
+		{E65B6B6D-EA0C-49A5-A930-5C1E9A2A8E21} = {04015C55-319B-4DB6-A011-54772874A738}
+		{56499445-B194-4E9B-A385-11289C0BAA88} = {04015C55-319B-4DB6-A011-54772874A738}
+		{3A581FE9-858C-4C75-9C86-590ACE466C86} = {04015C55-319B-4DB6-A011-54772874A738}
+		{7399F270-A4D6-4AE6-8B8F-8172D929C95E} = {04015C55-319B-4DB6-A011-54772874A738}
+	EndGlobalSection
+EndGlobal
