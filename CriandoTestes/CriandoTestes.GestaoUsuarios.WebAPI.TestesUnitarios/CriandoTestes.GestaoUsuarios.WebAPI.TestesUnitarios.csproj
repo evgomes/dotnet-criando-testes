@@ -24,14 +24,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CriandoTestes.GestaoUsuarios.Configuracoes\CriandoTestes.GestaoUsuarios.Configuracoes.csproj" />
-    <ProjectReference Include="..\CriandoTestes.GestaoUsuarios.Dados.EFCore\CriandoTestes.GestaoUsuarios.Dados.EFCore.csproj" />
-    <ProjectReference Include="..\CriandoTestes.GestaoUsuarios.Dominio\CriandoTestes.GestaoUsuarios.Dominio.csproj" />
-    <ProjectReference Include="..\CriandoTestes.GestaoUsuarios.Servicos\CriandoTestes.GestaoUsuarios.Servicos.csproj" />
+    <ProjectReference Include="..\CriandoTestes.GestaoUsuarios.WebAPI\CriandoTestes.GestaoUsuarios.WebAPI.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
-
+  
 </Project>

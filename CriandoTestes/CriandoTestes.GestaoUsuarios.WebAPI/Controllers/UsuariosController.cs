@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using CriandoTestes.GestaoUsuarios.Dominio.Servicos.Usuarios;
+﻿using CriandoTestes.GestaoUsuarios.Dominio.Servicos.Usuarios;
 using CriandoTestes.GestaoUsuarios.WebAPI.Recursos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -25,7 +24,7 @@ public class UsuariosController : ControllerBase
       return BadRequest(new ErroRecurso(GetMensagensErro(ModelState)));
     }
 
-    var resposta = await _usuarioServico.CriarAsync(requisicao.Nome, requisicao.DataNascimento, requisicao.Email, requisicao.Senha, cancellationToken);
+    var resposta = await _usuarioServico.CriarAsync(requisicao.Nome, requisicao.DataNascimento!.Value, requisicao.Email, requisicao.Senha, cancellationToken);
     if(!resposta.Sucesso)
     {
       return BadRequest(resposta.Mensagem!);

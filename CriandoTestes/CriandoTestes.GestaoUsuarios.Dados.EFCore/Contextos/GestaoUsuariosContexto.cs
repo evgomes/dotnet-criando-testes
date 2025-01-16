@@ -1,8 +1,10 @@
-﻿using CriandoTestes.GestaoUsuarios.Dominio.Models;
+﻿using System.Diagnostics.CodeAnalysis;
+using CriandoTestes.GestaoUsuarios.Dominio.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CriandoTestes.GestaoUsuarios.Dados.EFCore.Contextos;
 
+[ExcludeFromCodeCoverage]
 public class GestaoUsuariosContexto : DbContext
 {
   public DbSet<Usuario> Usuarios { get; set; }
