@@ -1,7 +1,7 @@
 ﻿using CriandoTestes.GestaoUsuarios.Dominio.Servicos.Usuarios;
+using CriandoTestes.GestaoUsuarios.WebAPI.Extensoes;
 using CriandoTestes.GestaoUsuarios.WebAPI.Recursos;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace CriandoTestes.GestaoUsuarios.WebAPI.Controllers;
 
@@ -21,18 +21,15 @@ public class UsuariosController : ControllerBase
   {
     if (!ModelState.IsValid)
     {
-      return BadRequest(new ErroRecurso(GetMensagensErro(ModelState)));
+      return BadRequest(new ErroRecurso(ModelState.GetMensagensErro()));
     }
 
     var resposta = await _usuarioServico.CriarAsync(requisicao.Nome, requisicao.DataNascimento!.Value, requisicao.Email, requisicao.Senha, cancellationToken);
-    if(!resposta.Sucesso)
+    if (!resposta.Sucesso)
     {
-      return BadRequest(resposta.Mensagem!);
+      return BadRequest(new ErroRecurso(new string[] { resposta.Mensagem! }));
     }
 
     return Created($"/api/usuarios/{resposta.Dados!.Id}", null);
   }
-
-  private static IEnumerable<string> GetMensagensErro(ModelStateDictionary modelState)
-    => modelState.SelectMany(m => m.Value!.Errors).Select(m => m.ErrorMessage);
 }

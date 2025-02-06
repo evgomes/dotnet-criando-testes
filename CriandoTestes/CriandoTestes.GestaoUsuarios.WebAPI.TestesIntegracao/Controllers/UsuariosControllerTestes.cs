@@ -1,6 +1,8 @@
 ﻿using System.Net;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
+using CriandoTestes.GestaoUsuarios.TestesIntegracao.Shared.Utilitarios;
 using CriandoTestes.GestaoUsuarios.WebAPI.Recursos;
 using CriandoTestes.GestaoUsuarios.WebAPI.TestesIntegracao.Utilitarios;
 
@@ -32,6 +34,8 @@ public class UsuariosControllerTestes : TesteIntegracaoFixture
     // Assert
     response.EnsureSuccessStatusCode(); // Status Code 201-299
     Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+    Assert.NotNull(response.Headers.Location);
+    Assert.StartsWith("/api/usuarios/", response.Headers.Location.ToString());
   }
 
   [Fact]
@@ -53,5 +57,12 @@ public class UsuariosControllerTestes : TesteIntegracaoFixture
 
     // Assert
     Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+
+    var responseContent = await response.Content.ReadAsStringAsync();
+    var erroRecurso = JsonSerializer.Deserialize<ErroRecurso>(responseContent, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+    Assert.NotNull(erroRecurso);
+    Assert.Contains(erroRecurso.Mensagens, x => Regex.IsMatch(x, "nome"));
+    Assert.Contains(erroRecurso.Mensagens, x => Regex.IsMatch(x, "email"));
   }
 }

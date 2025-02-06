@@ -33,4 +33,33 @@ public class RespostaTestes
     Assert.Equal(mensagem, result.Mensagem);
     Assert.Null(result.Dados);
   }
+
+  [Fact]
+  public void Resposta_DeveSerRecord()
+  {
+    // Arrange & Act
+    var type = typeof(Resposta<>);
+
+    // Assert
+    Assert.True(type.IsClass);
+    Assert.True(type.IsSealed);
+    Assert.True(type.IsGenericType);
+  }
+
+  [Fact]
+  public void Construtor_DeveCriarResposta()
+  {
+    // Arrange
+    var sucesso = true;
+    var mensagem = "Mensagem de teste";
+    var dados = "Dados de Teste";
+
+    // Act
+    var result = new Resposta<string>(sucesso, mensagem, dados);
+
+    // Assert
+    Assert.Equal(sucesso, result.Sucesso);
+    Assert.Equal(mensagem, result.Mensagem);
+    Assert.Equal(dados, result.Dados);
+  }
 }

@@ -1,4 +1,5 @@
 ﻿using CriandoTestes.GestaoUsuarios.Dados.EFCore.Contextos;
+using CriandoTestes.GestaoUsuarios.TestesIntegracao.Shared.Utilitarios;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CriandoTestes.GestaoUsuarios.WebAPI.TestesIntegracao.Utilitarios;

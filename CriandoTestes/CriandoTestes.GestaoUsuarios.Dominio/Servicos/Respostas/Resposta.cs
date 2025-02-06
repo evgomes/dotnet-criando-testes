@@ -6,7 +6,7 @@ public sealed record Resposta<T>
   public string? Mensagem { get; private init; }
   public T? Dados { get; private init; }
 
-  private Resposta(bool sucesso, string? mensagem, T? dados)
+  public Resposta(bool sucesso, string? mensagem, T? dados)
   {
     Sucesso = sucesso;
     Mensagem = mensagem;

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CriandoTestes.GestaoUsuarios.Dominio.Models;
 
@@ -10,6 +11,7 @@ public class Usuario
   public string Email { get; set; } = null!;
   public string Senha { get; set; } = null!;
 
+  [ExcludeFromCodeCoverage]
   // Construtor vazior para EF Core.
   protected Usuario()
   {

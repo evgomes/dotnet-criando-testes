@@ -21,7 +21,8 @@ public static class GestaoUsuariosServiceCollectionExtensions
 
     services.AddDbContext<GestaoUsuariosContexto>(options =>
     {
-      options.UseNpgsql(stringConexao);
+      options.UseInMemoryDatabase("GestaoUsuarios");
+      //options.UseNpgsql(stringConexao);
     });
 
     services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();

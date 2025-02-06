@@ -1,0 +1,58 @@
+﻿@model CriandoTestes.GestaoUsuarios.Mvc.Models.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+
+    var possuiMensagem = TempData.ContainsKey("Sucesso") && TempData.ContainsKey("Mensagem");
+    var sucesso = possuiMensagem ? Convert.ToBoolean(TempData["Sucesso"]) : true;
+    var mensagem = possuiMensagem ? Convert.ToString(TempData["Mensagem"]) : string.Empty;
+}
+
+@if (possuiMensagem)
+{
+    <div class="alert @(sucesso ? "alert-success" : "alert-danger")">
+        @mensagem
+    </div>
+}
+
+<div class="row">
+    <div class="col col-md-8 offset-md-2">
+        <h1>Criando Testes - Gestão de Usuários</h1>
+        <p>Este é um sistema de exemplo para demonstrar a criação de testes unitários e de integração em aplicações MVC.</p>
+        <p>Crie um usuário através do formulário abaixo e realize login. </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-md-8 offset-md-2">
+        <form asp-controller="Home" asp-action="CriarUsuario" method="post">
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="Senha" class="control-label"></label>
+                <input id="Senha" name="Senha" asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+                <div id="forca-senha" class="mt-2"></div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Criar Usuário</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/views/home/forca-senha.js" asp-append-version="true"></script>
+}
